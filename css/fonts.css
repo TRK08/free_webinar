@@ -1,0 +1,12 @@
+/* import Google Fonts Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@font-face {
+	font-family: 'Liberation'; 
+	src: url(../fonts/liberationsans.ttf); 
+}
+
+@font-face {
+	font-family: 'Liberation Bold'; 
+	src: url(../fonts/liberationsansbold.ttf); 
+}
