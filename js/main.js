@@ -58,14 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         modal.classList.toggle('active');
+        document.body.style.overflow='hidden';
       })
     });
     modalClose.addEventListener('click', () => {
       modal.classList.toggle('active');
+      document.body.style.overflow='auto';
     });
     modalBtn.addEventListener('click', (e) => {
       e.preventDefault();
       modal.classList.toggle('active');
+      document.body.style.overflow='auto';
     })
   }
   toggleModal()
