@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // SmoothScroll
   var scroll = new SmoothScroll('a[href*="#"]');
 
+  // WOW.js
+  new WOW().init();
+
   // Добавление таймера обратного отсчета
   function countdown() {
     const daysBox = document.querySelector('#days'),
@@ -11,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       secondsBox = document.querySelector('#seconds'),
       timeBox = document.querySelector('.start-time');
 
-    let currentDate = new Date();
+    let currentDate = new Date(),
     endDate = new Date('May 21 2021 02:20:00'),
       gap = endDate - currentDate,
       days = Math.floor(gap / (1000 * 60 * 60 * 24)),
@@ -49,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleModal() {
     const buttons = document.querySelectorAll('.reg-btn'),
       modal = document.querySelector('.modal'),
-      modalClose = document.querySelector('.modal-close')
+      modalClose = document.querySelector('.modal-close'),
+      modalBtn = document.querySelector('.form-btn')
 
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -58,11 +62,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     modalClose.addEventListener('click', () => {
       modal.classList.toggle('active');
+    });
+    modalBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.toggle('active');
     })
   }
   toggleModal()
 
 
+  // Мобильное меню
+  function toggleMobMenu () {
+    const mobMenu = document.querySelector('.header-nav'),
+        burger = document.querySelector('.header-burger');
 
+    burger.addEventListener('click', () => {
+        mobMenu.classList.toggle('active');
+        burger.classList.toggle('open');
+    })
+  }
 
+  toggleMobMenu()
 })
