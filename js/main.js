@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       timeBox = document.querySelector('.start-time');
 
     let currentDate = new Date(),
-    endDate = new Date('May 21 2021 02:20:00'),
+    endDate = new Date('May 20 2021 20:00:00'),
       gap = endDate - currentDate,
       days = Math.floor(gap / (1000 * 60 * 60 * 24)),
       hours = Math.floor((gap / (1000 * 60 * 60)) % 24),
@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.reg-btn'),
       modal = document.querySelector('.modal'),
       modalClose = document.querySelector('.modal-close'),
-      modalBtn = document.querySelector('.form-btn')
+      modalBtn = document.querySelector('.form-btn'),
+      modalWrap = document.querySelector('.modal__wrap')
 
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -67,8 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     modalBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.toggle('active');
-      document.body.style.overflow='auto';
+      // modalWrap.innerHTML = '<h2>Спасибо за регистрацию</h2> '
+      // setTimeout(function() {
+      //   modal.classList.toggle('active');
+      // }, 3000);
+      // document.body.style.overflow='auto';
     })
   }
   toggleModal()

@@ -5,12 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Спасибо за регистрацию</title>
+  <!-- link animate.css -->
+  <link rel="stylesheet" href="./css/animate.css">
   <!-- link style.css -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
+  <header class="header wow animate__animated animate__fadeIn">
     <div class="container">
       <div class="header-logo">
         <a href="#">БЕСПЛАТНЫЙ ВЕБИНАР</a>
@@ -42,15 +44,15 @@
 
   <section class="thanks">
     <div class="container">
-      <h1 class="thanks-title">
+      <h1 class="thanks-title wow animate__animated animate__fadeInLeft">
         Спасибо за <br>
         регистрацию на <br>
         <span>бесплатный вебинар</span>
       </h1>
-      <p class="thanks-subtitle">
+      <p class="thanks-subtitle wow animate__animated animate__fadeInLeft">
         Забрать подарок ты можешь в TELEGRAM
       </p>
-      <button class="thanks-btn green-btn">
+      <button class="thanks-btn green-btn wow animate__animated animate__fadeInLeft">
       <img src="./img/telegram.svg" alt="telegram">
         ЧЕК-ЛИСТ ПО ... ЗДЕСЬ. <span>ЖМИ</span></button>
     </div>
@@ -58,7 +60,7 @@
 
 
   <footer class="footer">
-    <div class="container">
+    <div class="container wow animate__animated animate__fadeIn">
       <div class="footer-main">
         <div class="footer-info">
           <span>ИП:</span>
@@ -94,8 +96,10 @@
         </div>
       </div>
       <div class="footer-copyright">
-        <img src="./img/copyright.svg" alt="copyright">
-        Все права защищены.  
+        <div>
+          <img src="./img/copyright.svg" alt="copyright">
+          Все права защищены. 
+        </div>
         <a href="#">
           Политика конфиденциальности
         </a>
@@ -104,6 +108,8 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <!-- wowJs -->
+  <script src="./js/wow.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

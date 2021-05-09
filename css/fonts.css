@@ -3,10 +3,12 @@
 
 @font-face {
 	font-family: 'Liberation'; 
-	src: url(../fonts/liberationsans.ttf); 
+	src: url(../fonts/liberationsans.ttf);
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Liberation Bold'; 
-	src: url(../fonts/liberationsansbold.ttf); 
+	src: url(../fonts/liberationsansbold.ttf);
+	font-display: swap;
 }
