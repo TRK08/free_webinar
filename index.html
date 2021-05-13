@@ -204,18 +204,24 @@
     </div>
   </section>
 
-  <div class="modal wow animate__animated animate__fadeIn">
+  <div class="modal">
     <div class="modal__wrap">
-      <div class="modal-title">ЗАРЕГИСТРИРОВАТЬСЯ НА ВЕБИНАР И <br> ПОЛУЧИТЬ ПОДАРОК</div>
-      <form action="" class="modal-form">
-        <input type="text" placeholder="Имя">
-        <input type="text" placeholder="Телефон: +7(999)999-99-99">
-        <button type="submit" class="form-btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>
-        <div class="modal-personal">
-          <input type="checkbox" id="modal-checkbox">
-          <label for="modal-checkbox">Подтверждаю согласие на обработку персональных данных</label>
-        </div>
-      </form>
+      <div class="modal-body">
+        <div class="modal-title">ЗАРЕГИСТРИРОВАТЬСЯ НА ВЕБИНАР И <br> ПОЛУЧИТЬ ПОДАРОК</div>
+        <form class="modal-form">
+          <input class="form-input form-input-name" type="text" placeholder="Имя">
+          <input class="form-input form-input-tel" type="text" placeholder="Телефон: +7(999)999-99-99">
+          <button type="submit" class="form-btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+          <div class="modal-personal">
+            <input type="checkbox" id="modal-checkbox" class="modal-checkbox">
+            <label for="modal-checkbox">Подтверждаю согласие на обработку персональных данных</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-thanks">
+        <h2 class="modal-thanks__title"> Спасибо за регистрацию </h2>
+        <p class="modal-thanks__subtitle">Ваша регистрация принята! Спасибо что работаете с нами</p>
+      </div>
       <div class="modal-close">
         <img src="./img/close.svg" alt="">
       </div>
@@ -226,9 +232,9 @@
     <div class="container wow animate__animated animate__fadeIn">
       <div class="footer-main">
         <div class="footer-info">
-          <span>ИП:</span>
-          <span>ИНН:</span>
-          <span>ОГРН:</span>
+          <span>ИП: Качанова К.И</span>
+          <span>ИНН: 422196353855</span>
+          <span>ОГРН: 318784700183626</span>
         </div>
         <div class="footer-menu__wrap">
           <nav class="footer-nav">
@@ -253,7 +259,7 @@
         </div>
         <div class="footer-social">
           <span>Поделиться</span>
-          <a href="#">
+          <a href="https://www.instagram.com/nickimagine/" target="_blank">
             <img src="./img/instagram.svg" alt="">
           </a>
         </div>
@@ -263,7 +269,7 @@
           <img src="./img/copyright.svg" alt="copyright">
           Все права защищены. 
         </div>
-        <a href="#">
+        <a href="./img/oferta.pdf" target="_blank">
           Политика конфиденциальности
         </a>
       </div>

@@ -6,13 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // WOW.js
   new WOW().init();
 
+
   // Добавление таймера обратного отсчета
+
   function countdown() {
     const daysBox = document.querySelector('#days'),
       hoursBox = document.querySelector('#hours'),
       minutesBox = document.querySelector('#minutes'),
-      secondsBox = document.querySelector('#seconds'),
+      secondsBox = document.querySelector('#seconds');
       timeBox = document.querySelector('.start-time');
+
+      
 
     let currentDate = new Date(),
     endDate = new Date('May 20 2021 20:00:00'),
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       minutes = Math.floor((gap / 1000 / 60) % 60);
 
 
-    if (gap < 0) {
+    if (gap <= 0) {
       timeBox.innerHTML = '<h2>Акция закончилась</h2>'
     }
     else {
@@ -42,40 +46,80 @@ document.addEventListener('DOMContentLoaded', () => {
         itemBox.innerText = item
       }
     }
-
   };
-  countdown()
-  setInterval(countdown, 1000);
-
-
+  
   // Модальное окно
   function toggleModal() {
     const buttons = document.querySelectorAll('.reg-btn'),
       modal = document.querySelector('.modal'),
       modalClose = document.querySelector('.modal-close'),
+      formInputName = document.querySelector('.form-input-name'),
+      formInputTel = document.querySelector('.form-input-tel'),
+      formWordpress = document.querySelector('.modal-form'),
+      modalBody = document.querySelector('.modal-body'),
+      modalCheckbox = document.querySelector('.modal-checkbox'),
       modalBtn = document.querySelector('.form-btn'),
-      modalWrap = document.querySelector('.modal__wrap')
+      modalThanks = document.querySelector('.modal-thanks');
 
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         modal.classList.toggle('active');
-        document.body.style.overflow='hidden';
+        // document.body.style.overflow='hidden';
       })
     });
     modalClose.addEventListener('click', () => {
       modal.classList.toggle('active');
-      document.body.style.overflow='auto';
-    });
-    modalBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      // modalWrap.innerHTML = '<h2>Спасибо за регистрацию</h2> '
-      // setTimeout(function() {
-      //   modal.classList.toggle('active');
-      // }, 3000);
       // document.body.style.overflow='auto';
-    })
+    });
+
+
+    // FORM VALIDATE
+    function validateForm() {
+      let modalInputs = [formInputName, formInputTel, modalCheckbox];
+      modalInputs.forEach(input => {
+        modalBtn.disabled = true;
+        input.addEventListener('input', () => {
+          if (input.value.length > 0 && input.checked) {
+            modalBtn.disabled = false;
+          }
+        })
+      })
+    }
+
+    validateForm();
+    
+
+    formWordpress.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (formInputTel.value !== '' && formInputName.value !== '' && modalCheckbox.checked) {
+        modalThanks.classList.toggle('active');
+        modalBody.classList.toggle('hidden');
+        if (document.body.contains(document.querySelector('.start-time'))) {
+          setTimeout(function(){
+            window.location.href = 'thanks.html'
+          },2000)
+        }
+        else {
+          setTimeout(function() {
+            modal.classList.toggle('active');
+          },2000);
+        }
+      }
+      else {
+        
+      }
+      // else {
+      //   if(!modalCheckbox.checked) {
+      //     document.querySelector('.modal-personal label').style.color = 'red';
+      //   }
+      //   else {
+      //     document.querySelector('.modal-personal label').style.color = '#000';
+      //   }
+      // }
+    });
   }
-  toggleModal()
+
+  toggleModal();
 
 
   // Мобильное меню
@@ -90,4 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   toggleMobMenu()
+
+
+  if (document.body.contains(document.querySelector('.start-time'))) {
+    countdown();
+    setInterval(countdown, 1000);
+
+  }
+
+
+    
 })
