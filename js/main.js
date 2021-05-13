@@ -76,15 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // FORM VALIDATE
     function validateForm() {
       let modalInputs = [formInputName, formInputTel, modalCheckbox];
-      modalInputs.forEach(input => {
-        modalBtn.disabled = true;
-        input.addEventListener('input', () => {
-          if (input.value.length > 0 && input.checked) {
+      modalBtn.style.opacity = .5;
+      modalBtn.disabled = true;
+      for (let i = 0; i < modalInputs.length; i++) {
+        modalInputs[i].addEventListener('input', () => {
+          if (modalInputs[0].value.length > 0 &&  modalInputs[1].value.length > 0 && modalInputs[2].checked) {
             modalBtn.disabled = false;
+            modalBtn.style.opacity = 1;
+            modalBtn.style.cursor = 'pointer';
           }
-        })
+          else {
+            modalBtn.disabled = true;
+            modalBtn.style.opacity = .5;
+            modalBtn.style.cursor = 'default';
+          }
       })
     }
+  }
 
     validateForm();
     
@@ -142,6 +150,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-
-    
 })
